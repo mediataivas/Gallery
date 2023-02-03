@@ -13,13 +13,9 @@
 
 ;(function (factory) {
   'use strict'
-  if (typeof define === 'function' && define.amd) {
-    // Register as an anonymous AMD module:
-    define(['./blueimp-helper', './blueimp-gallery-video'], factory)
-  } else {
     // Browser globals:
     factory(window.blueimp.helper || window.jQuery, window.blueimp.Gallery)
-  }
+
 })(function ($, Gallery) {
   'use strict'
 

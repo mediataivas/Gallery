@@ -206,12 +206,8 @@
     }
   })
 
-  if (typeof define === 'function' && define.amd) {
-    define(function () {
-      return Helper
-    })
-  } else {
-    window.blueimp = window.blueimp || {}
-    window.blueimp.helper = Helper
-  }
+
+  window.blueimp = window.blueimp || {}
+  window.blueimp.helper = Helper
+
 })()
