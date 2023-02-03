@@ -15,13 +15,14 @@
 /* global define, DocumentTouch */
 
 /* eslint-disable no-param-reassign */
+import { BlueImpHelper } from './blueimp-helper.js';
 
-;(function (factory) {
-  'use strict'
-    // Browser globals:
-    window.blueimp = window.blueimp || {}
-    window.blueimp.Gallery = factory(window.blueimp.helper || window.jQuery)
-})(function ($) {
+'use strict'
+// Browser globals:
+window.blueimp = window.blueimp || {}
+export const Gallery = factory(BlueImpHelper);
+export default Gallery;
+function factory($) {
   'use strict'
 
   /**
@@ -415,14 +416,14 @@
       if (this.elements[this.index] > 1) {
         this.timeout = this.setTimeout(
           (!this.requestAnimationFrame && this.slide) ||
-            function (to, duration) {
-              that.animationFrameId = that.requestAnimationFrame.call(
-                window,
-                function () {
-                  that.slide(to, duration)
-                }
-              )
-            },
+          function (to, duration) {
+            that.animationFrameId = that.requestAnimationFrame.call(
+              window,
+              function () {
+                that.slide(to, duration)
+              }
+            )
+          },
           [nextIndex, this.options.slideshowTransitionDuration],
           this.interval
         )
@@ -752,7 +753,7 @@
       var slideWidth = this.slideWidth
       var duration = Math.ceil(
         (this.options.transitionDuration * (1 - absTouchDeltaX / slideWidth)) /
-          2
+        2
       )
       // Determine if slide attempt triggers next/prev slide:
       var isValidSlide = absTouchDeltaX > 20
@@ -1225,8 +1226,8 @@
           this.index > index
             ? -this.slideWidth
             : this.index < index
-            ? this.slideWidth
-            : 0,
+              ? this.slideWidth
+              : 0,
           0
         )
       }
@@ -1379,7 +1380,7 @@
           if (
             this.list[i] === index ||
             this.getItemProperty(this.list[i], urlProperty) ===
-              this.getItemProperty(index, urlProperty)
+            this.getItemProperty(index, urlProperty)
           ) {
             index = i
             break
@@ -1543,4 +1544,4 @@
   })
 
   return Gallery
-})
+}
