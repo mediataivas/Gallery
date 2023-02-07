@@ -10,13 +10,14 @@
  */
 
 /* global define */
+/* eslint-disable no-param-reassign */
+import { BlueImpHelper } from './blueimp-helper.js';
+import { Gallery } from './blueimp-gallery.js';
 
-;(function (factory) {
-  'use strict'
-    // Browser globals:
-    factory(window.blueimp.helper || window.jQuery, window.blueimp.Gallery)
+export const Gallery = factory(BlueImpHelper, Gallery);
+export default Gallery;
 
-})(function ($, Gallery) {
+function factory($, Gallery) {
   'use strict'
 
   var galleryPrototype = Gallery.prototype
@@ -181,4 +182,4 @@
   })
 
   return Gallery
-})
+}
