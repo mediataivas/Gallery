@@ -14,8 +14,8 @@
 import { BlueImpHelper } from './blueimp-helper.js';
 import { Gallery } from './blueimp-gallery.js';
 
-export const Gallery = factory(BlueImpHelper, Gallery);
-export default Gallery;
+export const VideoGallery = factory(BlueImpHelper, Gallery);
+export default VideoGallery;
 
 function factory($, Gallery) {
   'use strict'

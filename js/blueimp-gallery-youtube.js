@@ -13,8 +13,8 @@
 import { BlueImpHelper } from './blueimp-helper.js';
 import { Gallery } from './blueimp-gallery.js';
 
-export const Gallery = factory(BlueImpHelper, Gallery);
-export default Gallery;
+export const YouTubeGallery = factory(BlueImpHelper, Gallery);
+export default YouTubeGallery;
 
 function factory($, Gallery) {
   'use strict'
