@@ -10,14 +10,13 @@
  */
 
 /* global define */
+import { BlueImpHelper } from './blueimp-helper.js';
+import { Gallery } from './blueimp-gallery.js';
 
-;(function (factory) {
-  'use strict'
+export const FullscreenGallery = factory(BlueImpHelper, Gallery);
+export default FullscreenGallery;
 
-    // Browser globals:
-    factory(window.blueimp.helper || window.jQuery, window.blueimp.Gallery)
-
-})(function ($, Gallery) {
+function factory($, Gallery) {
   'use strict'
 
   var galleryPrototype = Gallery.prototype
@@ -80,4 +79,4 @@
   })
 
   return Gallery
-})
+}

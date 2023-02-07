@@ -10,12 +10,13 @@
  */
 
 /* global define, $f */
+import { BlueImpHelper } from './blueimp-helper.js';
+import { Gallery } from './blueimp-gallery.js';
 
-;(function (factory) {
-  'use strict'
-    // Browser globals:
-    factory(window.blueimp.helper || window.jQuery, window.blueimp.Gallery)
-})(function ($, Gallery) {
+export const VimeoGallery = factory(BlueImpHelper, Gallery);
+export default VimeoGallery;
+
+function factory($, Gallery) {
   'use strict'
 
   if (!window.postMessage) {
@@ -204,4 +205,4 @@
   })
 
   return Gallery
-})
+}
